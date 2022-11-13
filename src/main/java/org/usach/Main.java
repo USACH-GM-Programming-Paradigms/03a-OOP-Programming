@@ -47,6 +47,16 @@ public class Main {
         System.out.println("List of filtered products by price (Filter example): ");
         productsPriceGreaterThan400.forEach(System.out::println);
 
+        // Foreach
+        // Execute a method in all objects
+        System.out.println("Execute a method in all objects");
+
+        // Method with arguments
+        products.forEach(product -> product.increasePrice(100));
+        // Method without arguments
+        System.out.println("Method without arguments");
+        products.forEach(System.out::println);
+
 
     }
 }

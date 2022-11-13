@@ -38,6 +38,10 @@ public class Product {
         this.category = category;
     }
 
+    public void increasePrice(int amount) {
+        this.price += amount;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
