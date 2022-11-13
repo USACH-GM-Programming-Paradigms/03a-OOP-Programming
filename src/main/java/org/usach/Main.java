@@ -14,12 +14,16 @@ public class Main {
         var secondProduct = new Product("xbox360", 300, "videogames");
         var thirdProduct = new Product("xboxOne", 600, "videogames");
         var fourProduct = new Product("cup", 20, "utils");
+        var fifthProduct = new Product("guitar", 100, "music");
 
-        // List of products
+        // List of products with default objects
         var products = new ArrayList<>(
                 Arrays.asList(
                         firstProduct, secondProduct, thirdProduct, fourProduct
                 ));
+
+        // Add element to a list
+        products.add(fifthProduct);
 
         // Print list of products
         products.forEach(System.out::println);
