@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
 
+        System.out.println("--- INHERITANCE ---");
         System.out.println("Inheritance example");
         Point2D myPoint2D = new Point2D(1, 2);
         Point3D myPoint3D = new Point3D(1, 2, 3);
@@ -26,6 +27,7 @@ public class Main {
         myPoint3D.setX(100);
         System.out.println(myPoint3D);
 
+        System.out.println("\n --- INTERFACE ---");
         System.out.println("Interface example");
         // Polymorphism: cat can be an Animal or a Cat class
         Animal myFirstCat = new Cat("garfield", "lasagna", 0, 9);
@@ -33,6 +35,7 @@ public class Main {
         myFirstCat.walk();
         mySecondCat.walk();
 
+        System.out.println("\n --- ABSTRACT CLASS ---");
         System.out.println("Abstract Class example");
         // An Abtract Class can't be instanced because has abstract methods
         //Vehicule myVehicule = new Vehicule();  //This is going to fail!
@@ -45,7 +48,21 @@ public class Main {
         System.out.println(myBicycle.getModel());
         System.out.println(batmanCar);
 
+        System.out.println("\n --- INSTANCE OF EXAMPLE ---");
+        // instanceOf
+        // You can check what is the type of a object
+        // Polymorphism demostration
+        // instanceof return a boolean
+        var isBatmanCarAVehicule = batmanCar instanceof Vehicule;
+        var isBatmanCarACar = batmanCar instanceof Car;
+
+        System.out.println("Is Batman Car a Vehicule?: " + isBatmanCarAVehicule);
+        System.out.println("Is Batman Car a Car?: " + isBatmanCarACar);
+
+
         // Example: Products
+        System.out.println("\n --- PRODUCTS EXAMPLES ---");
+
         var firstProduct = new Product("ps5", 700, "videogames");
         var secondProduct = new Product("xbox360", 300, "videogames");
         var thirdProduct = new Product("xboxOne", 600, "videogames");
@@ -69,6 +86,7 @@ public class Main {
         System.out.println("Name of the first product: ");
         System.out.println(productAtFirstPosition.getName());
 
+        System.out.println("\n --- STREAM API EXAMPLES ---");
         // Stream API example
         // Map
         var productNames =
@@ -151,6 +169,7 @@ public class Main {
         System.out.println("Distinct (no duplicates) letter list");
         distinctLetters.forEach(System.out::println);
 
+        System.out.println("\n --- FOR EACH EXAMPLES ---");
         // Foreach
         // Execute a method in all objects
         System.out.println("Execute a method in all objects");
