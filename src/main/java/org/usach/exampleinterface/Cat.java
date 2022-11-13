@@ -19,12 +19,12 @@ public class Cat implements Animal {
 
     @Override
     public void walk() {
-        System.out.println("cat walking");
+        System.out.println(this.name + " is walking");
     }
 
     @Override
     public void walk(int number) {
-        System.out.println("cat walking with speed: " + number);
+        System.out.println(this.name + " is walking with speed: " + number);
     }
 
     @Override
@@ -44,6 +44,6 @@ public class Cat implements Animal {
 
     @Override
     public void eat() {
-        System.out.println("cat eating");
+        System.out.println(this.name + " is eating");
     }
 }

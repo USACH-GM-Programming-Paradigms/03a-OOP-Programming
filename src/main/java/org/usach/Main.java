@@ -1,5 +1,9 @@
 package org.usach;
 
+import org.usach.exampleinheritance.Point2D;
+import org.usach.exampleinheritance.Point3D;
+import org.usach.exampleinterface.Animal;
+import org.usach.exampleinterface.Cat;
 import org.usach.tda.Product;
 
 import java.util.ArrayList;
@@ -8,6 +12,22 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
+
+        System.out.println("Inheritance example");
+        Point2D myPoint2D = new Point2D(1, 2);
+        Point3D myPoint3D = new Point3D(1, 2, 3);
+        System.out.println(myPoint2D);
+        System.out.println(myPoint3D);
+        // Use a method from the superclass
+        myPoint3D.setX(100);
+        System.out.println(myPoint3D);
+
+        System.out.println("Interface example");
+        // Polymorphism: cat can be an Animal or a Cat class
+        Animal myFirstCat = new Cat("garfield", "lasagna", 0, 9);
+        Cat mySecondCat = new Cat("El gato con botas", "something", 10, 99);
+        myFirstCat.walk();
+        mySecondCat.walk();
 
         // Example: Products
         var firstProduct = new Product("ps5", 700, "videogames");
