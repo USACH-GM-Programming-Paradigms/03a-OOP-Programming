@@ -1,12 +1,12 @@
 package org.usach.exampleabstractclass;
 
-public class Bicicyle extends Vehicule {
+public class Bicycle extends Vehicule {
 
     int wheelsQty;
 
     int chainsQty;
 
-    public Bicicyle(String model, int currentSpeed, int maxSpeed, int wheelsQty, int chainsQty) {
+    public Bicycle(String model, int currentSpeed, int maxSpeed, int wheelsQty, int chainsQty) {
         super(model, currentSpeed, maxSpeed);
         this.wheelsQty = wheelsQty;
         this.chainsQty = chainsQty;
@@ -50,7 +50,7 @@ public class Bicicyle extends Vehicule {
 
     @Override
     public String toString() {
-        return "Bicicyle{" +
+        return "Bicycle{" +
                 "wheelsQty=" + wheelsQty +
                 ", chainsQty=" + chainsQty +
                 ", model='" + model + '\'' +

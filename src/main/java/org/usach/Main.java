@@ -1,5 +1,8 @@
 package org.usach;
 
+import org.usach.exampleabstractclass.Bicycle;
+import org.usach.exampleabstractclass.Car;
+import org.usach.exampleabstractclass.Vehicule;
 import org.usach.exampleinheritance.Point2D;
 import org.usach.exampleinheritance.Point3D;
 import org.usach.exampleinterface.Animal;
@@ -28,6 +31,18 @@ public class Main {
         Cat mySecondCat = new Cat("El gato con botas", "something", 10, 99);
         myFirstCat.walk();
         mySecondCat.walk();
+
+        System.out.println("Abstract Class example");
+        // An Abtract Class can't be instanced because has abstract methods
+        //Vehicule myVehicule = new Vehicule();  //This is going to fail!
+        Vehicule myCar = new Car("deLorean", 100, 1000, 2);
+        Vehicule myBicycle = new Bicycle("oxford", 10, 20, 2, 2);
+        // But also a Car and Bicycle can be his own class, this is polymorphism
+        Car batmanCar = new Car("batman car", 10, 200, 1);
+
+        System.out.println(myCar.getModel());
+        System.out.println(myBicycle.getModel());
+        System.out.println(batmanCar);
 
         // Example: Products
         var firstProduct = new Product("ps5", 700, "videogames");
