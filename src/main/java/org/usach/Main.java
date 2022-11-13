@@ -11,6 +11,7 @@ import org.usach.tda.Product;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -81,6 +82,45 @@ public class Main {
 
         System.out.println("List of filtered products by price (Filter example): ");
         productsPriceGreaterThan400.forEach(System.out::println);
+
+        // Min-Max
+        // If you want min, change .max with .min
+        Product productWithMaxPrice =
+                products.stream()
+                        .max(Comparator.comparing(Product::getPrice))
+                        .get();
+
+        System.out.println("Name of the product with the current max price");
+        System.out.println(productWithMaxPrice.getName());
+        System.out.println("Price of the product with the current max price");
+        System.out.println(productWithMaxPrice.getPrice());
+
+        // Sorting
+        // Prices sorted from lowest to highest (by default)
+        var sortedProductsByPriceLowestToHighest =
+                products.stream()
+                        .sorted(Comparator.comparing(Product::getPrice))
+                        .collect(Collectors.toList());
+
+        // Prices sorted from lowest to highest
+        var sortedProductsByPriceHighestToLowest =
+                products.stream()
+                        .sorted(Comparator.comparing(Product::getPrice).reversed())
+                        .collect(Collectors.toList());
+
+        System.out.println("Sorted products by price from lowest to highest (by default)");
+        sortedProductsByPriceLowestToHighest.forEach(System.out::println);
+        System.out.println("Sorted products by price from highest to lowest (reversed)");
+        sortedProductsByPriceHighestToLowest.forEach(System.out::println);
+
+        //Sort by default object comparator
+        var sortedProductsByDefaultComparator =
+                products.stream()
+                        .sorted()
+                        .collect(Collectors.toList());
+
+        System.out.println("Sorted products by default comparator (name), check Product class comparator:");
+        sortedProductsByDefaultComparator.forEach(System.out::println);
 
         // Foreach
         // Execute a method in all objects

@@ -1,6 +1,6 @@
 package org.usach.tda;
 
-public class Product {
+public class Product implements Comparable {
 
     private String name;
 
@@ -49,5 +49,13 @@ public class Product {
                 ", price=" + price +
                 ", category='" + category + '\'' +
                 '}';
+    }
+
+    // If you want to add  default comparator, you need to implement the Comparable interface
+    // And override the default compareTo method
+    @Override
+    public int compareTo(Object o) {
+        Product otherProduct = (Product) o;
+        return this.getName().compareTo(otherProduct.getName());
     }
 }
