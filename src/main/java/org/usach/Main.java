@@ -64,6 +64,11 @@ public class Main {
         // Print list of products
         products.forEach(System.out::println);
 
+        // Get element by position in a list
+        var productAtFirstPosition = products.get(0);
+        System.out.println("Name of the first product: ");
+        System.out.println(productAtFirstPosition.getName());
+
         // Stream API example
         // Map
         var productNames =
@@ -113,7 +118,7 @@ public class Main {
         System.out.println("Sorted products by price from highest to lowest (reversed)");
         sortedProductsByPriceHighestToLowest.forEach(System.out::println);
 
-        //Sort by default object comparator
+        //Sort by default object comparator (See Product Comparator method)
         var sortedProductsByDefaultComparator =
                 products.stream()
                         .sorted()
@@ -121,6 +126,30 @@ public class Main {
 
         System.out.println("Sorted products by default comparator (name), check Product class comparator:");
         sortedProductsByDefaultComparator.forEach(System.out::println);
+
+        // Count
+        // Count filter elements
+        // Add new element
+        products.add(new Product("ps5", 800, "videogames"));
+
+        var productPS5Ocurrences =
+                products.stream()
+                        .filter(product -> product.getName().equals("ps5"))
+                        .count();
+
+        System.out.println("Count product PS5 in products list:");
+        System.out.println(productPS5Ocurrences);
+
+        // Remove (distinct) duplicate elements
+        var letters = Arrays.asList("A", "B", "C", "D", "A", "B", "C");
+
+        var distinctLetters =
+                letters.stream()
+                        .distinct()
+                        .collect(Collectors.toList());
+
+        System.out.println("Distinct (no duplicates) letter list");
+        distinctLetters.forEach(System.out::println);
 
         // Foreach
         // Execute a method in all objects
