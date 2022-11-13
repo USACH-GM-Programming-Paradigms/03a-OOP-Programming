@@ -89,6 +89,8 @@ public class Main {
         System.out.println("\n --- STREAM API EXAMPLES ---");
         // Stream API example
         // Map
+        System.out.println("\n --- MAP ---");
+
         var productNames =
                 products.stream()
                         .map(Product::getName)
@@ -98,6 +100,8 @@ public class Main {
         productNames.forEach(System.out::println);
 
         // Filter
+        System.out.println("\n --- MAP ---");
+
         var productsPriceGreaterThan400 =
                 products.stream()
                         .filter(product -> product.getPrice() > 400)
@@ -105,6 +109,19 @@ public class Main {
 
         System.out.println("List of filtered products by price (Filter example): ");
         productsPriceGreaterThan400.forEach(System.out::println);
+
+        //Filter and Map together
+        System.out.println("\n --- FILTER AND MAP TOGETHER ---");
+
+        var namesOfTheProductsWithPriceBetween400And700 =
+                products.stream()
+                        .filter(product -> product.getPrice() > 400 &&
+                                product.getPrice() < 700)
+                        .map(Product::getName)
+                        .collect(Collectors.toList());
+
+        System.out.println("Names of the products with prices between 400 and 700");
+        namesOfTheProductsWithPriceBetween400And700.forEach(System.out::println);
 
         // Min-Max
         // If you want min, change .max with .min
