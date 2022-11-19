@@ -14,6 +14,8 @@ public class University {
     private String name;
 
     // University HAS-A lots of departments
+    // University <|> --- Departments
+    // El rombo va hacia el lado de la clase que CONTIENE a la otra
     // Relationship type: Composition
     // Strong relationship
     // University is a composition of departments
