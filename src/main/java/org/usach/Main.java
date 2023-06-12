@@ -12,6 +12,7 @@ import org.usach.tda.Product;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -197,6 +198,9 @@ public class Main {
         System.out.println("Method without arguments");
         products.forEach(System.out::println);
 
+        // Time
+        var CurrentTimestamp = new Date().getTime();
+        System.out.println(CurrentTimestamp);
 
     }
 }

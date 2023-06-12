@@ -1,5 +1,7 @@
 package org.usach.tda;
 
+import java.util.Date;
+
 public class Product implements Comparable {
 
     private String name;
@@ -8,10 +10,13 @@ public class Product implements Comparable {
 
     private String category;
 
+    private Date creationTimestamp;
+
     public Product(String name, int price, String category) {
         this.name = name;
         this.price = price;
         this.category = category;
+        this.creationTimestamp = new Date();
     }
 
     public String getName() {
@@ -48,6 +53,7 @@ public class Product implements Comparable {
                 "name='" + name + '\'' +
                 ", price=" + price +
                 ", category='" + category + '\'' +
+                ", creationTimestamp='" + creationTimestamp + '\'' +
                 '}';
     }
 
