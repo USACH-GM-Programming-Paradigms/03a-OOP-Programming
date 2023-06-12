@@ -64,4 +64,19 @@ public class Product implements Comparable {
         Product otherProduct = (Product) o;
         return this.getName().compareTo(otherProduct.getName());
     }
+
+    // Internal methods
+    // Override equals() and hashCode() methods to determine object uniqueness based on id
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        MyObject myObject = (MyObject) o;
+//        return Objects.equals(id, myObject.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id);
+//    }
 }
